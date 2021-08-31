@@ -1,6 +1,6 @@
 #Artificial Neural Networks (ANN)
 
-<img height="450" src="C:\Users\shivani.lad\Desktop\documentation\pics\giffy.gif" width="700"/>
+<img height="450" src="images\giffy.gif" width="700"/>
 
 **Have you ever wondered how our brain works?** We all might have learned about it in our school days, Right! Our nervous system helps our brain to send all the messages to the desired parts of our body. **ANN** works exactly similar to how the neurons work in our nervous system.   
 
@@ -19,12 +19,12 @@
 
 
   <center>
-    <img height="350" src="C:\Users\shivani.lad\Desktop\documentation\pics\neuron.jpg" width="500"/>
+    <img height="350" src="images\neuron.jpg" width="500"/>
 
 **Biological Neural Network**
 
 <br><br>
-<img height="250" src="C:\Users\shivani.lad\Desktop\documentation\pics\artificial-neural-network3.png" width="550"/>
+<img height="250" src="images\artificial-neural-network3.png" width="550"/>
 
 **Artificial Neural Network**
 </center>
@@ -52,7 +52,7 @@
 - Artificial Neural Network primarily consists of three layers :
 
 <center>
-    <img height="300" src="C:\Users\shivani.lad\Desktop\documentation\pics\artificial-neural-network4.png" width="600"/>
+    <img height="300" src="images\artificial-neural-network4.png" width="600"/>
 
 **Artificial Neural Network Architecture**
 </center>
@@ -82,7 +82,7 @@
 - A transfer function is used for calculating the weighted sum of the inputs and the bias.
 
 <center>
-<img height="260" src="C:\Users\shivani.lad\Desktop\documentation\pics\how-ANN-works.png" width="550"/>
+<img height="260" src="images\how-ANN-works.png" width="550"/>
 
 </center>
 
@@ -99,7 +99,7 @@
   
 
   <center>
-  <img height="250" src="C:\Users\shivani.lad\Desktop\documentation\pics\How-artificial-Neural-Networks-work.png" width="600"/>
+  <img height="250" src="images\How-artificial-Neural-Networks-work.png" width="600"/>
   </center>
   
 ####Explanation
@@ -116,7 +116,7 @@
 - In the image below, the curve is our cost function curve and our aim is to minimize the error such that Jmin i.e global minima is achieved.
 
 <center>
-<img height="300" src="C:\Users\shivani.lad\Desktop\documentation\pics\gradient.png" width="500"/>
+<img height="300" src="images\gradient.png" width="500"/>
 </center>
 
 ####Steps to achieve global minima
@@ -125,7 +125,7 @@
 3. Then new weights are calculated using the below formula, where **a** is the **learning rate** which is the parameter also known as step size to control the speed or steps of the backpropagation. It gives additional control on how fast we want to move on the curve to reach global minima.
 
 <center>
-<img height="300" src="C:\Users\shivani.lad\Desktop\documentation\pics\update_formula.png" width="500"/>
+<img height="300" src="images\update_formula.png" width="500"/>
 </center>
 
 4. This process of calculating the new weights, then errors from the new weights, and then updation of weights continues till we reach global minima and loss is minimized. 
@@ -136,7 +136,7 @@
 - Therefore, the **learning rate** is the **hyperparameter** that we have to choose based on the model.
 
 <center>
-<img height="300" src="C:\Users\shivani.lad\Desktop\documentation\pics\curve.png" width="500"/>
+<img height="300" src="images\curve.png" width="500"/>
 </center>
 
 ####Why do we need Non-linear activation functions ?
@@ -147,7 +147,7 @@
 
 - Suppose we have a neural network like;
 <center>
-<img height="300" src="C:\Users\shivani.lad\Desktop\documentation\pics\neuralNet.png" width="500"/>
+<img height="300" src="images\neuralNet.png" width="500"/>
 </center>
 
 ####Elements of the diagram :-
@@ -283,9 +283,9 @@ tanh(x) = 2 * sigmoid(2x) - 1
 - We use them in cases where the data is not sequential in nature.
 
 <center>
-<img height="300" src="C:\Users\shivani.lad\Desktop\documentation\pics\feed_forward_ann.jpg" width="550"/>
+<img height="300" src="images\feed_forward_ann.jpg" width="550"/>
 <br><br>
-<img height="300" src="C:\Users\shivani.lad\Desktop\documentation\pics\feedforward-artificial-neural-networks.png" width="500"/>
+<img height="300" src="images\feedforward-artificial-neural-networks.png" width="500"/>
 </center>
 
 ####2. FeedBack Neural Network :
@@ -293,7 +293,7 @@ tanh(x) = 2 * sigmoid(2x) - 1
 - As per the University of Massachusetts, Lowell Centre for Atmospheric Research, the feedback networks feed information back into itself and are well suited to solve optimization issues. The Internal system error corrections utilize feedback ANNs.
 
 <center>
-<img height="400" src="C:\Users\shivani.lad\Desktop\documentation\pics\feedback_ann.jpg" width="300"/>
+<img height="400" src="images\feedback_ann.jpg" width="300"/>
 
 </center>
 
@@ -321,9 +321,9 @@ tanh(x) = 2 * sigmoid(2x) - 1
 
 
 <center>
-<img height="300" src="C:\Users\shivani.lad\Desktop\documentation\pics\1.png" width="300"/>
-<img height="300" src="C:\Users\shivani.lad\Desktop\documentation\pics\2.png" width="300"/>
-<img height="300" src="C:\Users\shivani.lad\Desktop\documentation\pics\3.png" width="300"/>
+<img height="300" src="images\1.png" width="300"/>
+<img height="300" src="images\2.png" width="300"/>
+<img height="300" src="images\3.png" width="300"/>
 
 ####Classification of data points to their respective colors using the flower dataset.
 </center>
@@ -336,7 +336,7 @@ tanh(x) = 2 * sigmoid(2x) - 1
 
 
 <center>
-<img height="900" src="C:\Users\shivani.lad\Desktop\documentation\pics\4.png" width="600"/>
+<img height="900" src="images\4.png" width="600"/>
 
 ####Illustrates the impact of multiple neurons on the final output. The higher the number of neurons, the better is the classification accuracy. 
 </center>
@@ -364,7 +364,7 @@ tanh(x) = 2 * sigmoid(2x) - 1
 - First, we import the **numpy library** used for _multidimensional array_ then import the **pandas library** used to _import the dataset_ and in last we import **matplotlib library** used for _plotting the graph._
 
 <center>
-<img height="150" src="C:\Users\shivani.lad\Desktop\documentation\pics\1.1.png" width="300"/>
+<img height="150" src="images\1.1.png" width="300"/>
 </center>
 
 ####1.2 _Import the Dataset_
@@ -373,7 +373,7 @@ tanh(x) = 2 * sigmoid(2x) - 1
 - Our independent variables are 1 to 12 attributes as you can see in the sample dataset which we call ‘X’ and dependent is our last attribute which we call ‘y’ here.
 
 <center>
-<img height="100" src="C:\Users\shivani.lad\Desktop\documentation\pics\1.2.png" width="450"/>
+<img height="100" src="images\1.2.png" width="450"/>
 </center>
 
 ####1.3 _Encoding the Categorical Data_
@@ -381,7 +381,7 @@ tanh(x) = 2 * sigmoid(2x) - 1
 - If we see our dataset then Geography & Gender attribute is in Text and we Encode these two attributes in this part use the LabelEncoder and OneHOTEncoder from the Sklearn. Processing library.
 
 <center>
-<img height="200" src="C:\Users\shivani.lad\Desktop\documentation\pics\1.3.png" width="600"/>
+<img height="200" src="images\1.3.png" width="600"/>
 </center>
 
 ####1.4 _Split the dataset for test and train_
@@ -389,7 +389,7 @@ tanh(x) = 2 * sigmoid(2x) - 1
 - Our dataset contains 10000 instances so **8000 data** we **train** and **2000 data** for the **test**.
 
 <center>
-<img height="100" src="C:\Users\shivani.lad\Desktop\documentation\pics\1.4.png" width="800"/>
+<img height="100" src="images\1.4.png" width="800"/>
 </center>
 
 ####1.5 _Feature Scaling_
@@ -398,13 +398,13 @@ tanh(x) = 2 * sigmoid(2x) - 1
 - This will cause some issues in our machinery model to solve that problem we set all values on the same scale there are two methods to solve that problem first one is Normalize and Second is Standard Scaler.
 
 <center>
-<img height="250" src="C:\Users\shivani.lad\Desktop\documentation\pics\1.5.png" width="550"/>
+<img height="250" src="images\1.5.png" width="550"/>
 </center>
 
 - Here we use standard Scaler import from Sklearn Library.
 
 <center>
-<img height="150" src="C:\Users\shivani.lad\Desktop\documentation\pics\1.5_2.png" width="450"/>
+<img height="150" src="images\1.5_2.png" width="450"/>
 </center>
 
 ###2. Building our Model
@@ -416,14 +416,14 @@ In this part, we model our Artificial Neural Network model.
 - Here we import the two modules from Keras. The first one is **Sequential** used for initializing our ANN model and the second is **Dense** used for adding different layers of ANN.
 
 <center>
-<img height="120" src="C:\Users\shivani.lad\Desktop\documentation\pics\2.1.png" width="550"/>
+<img height="120" src="images\2.1.png" width="550"/>
 </center>
 
 ####2.2 _Initialize our ANN model_
 - In this step, we initialize our Artificial Neural Network model to do that we use sequential modules.
 
 <center>
-<img height="80" src="C:\Users\shivani.lad\Desktop\documentation\pics\2.2.png" width="400"/>
+<img height="80" src="images\2.2.png" width="400"/>
 </center>
 
 ####2.3 _ Adding the input layer and first hidden layer_
@@ -433,14 +433,14 @@ In this part, we model our Artificial Neural Network model.
 - And the last parameter which we pass in dense function is **input_dim= 11** which means the input node of our Neural Network is 11 because our dataset has 11 attributes that’s why we choose 11 input nodes.
 
 <center>
-<img height="60" src="C:\Users\shivani.lad\Desktop\documentation\pics\2.3.png" width="700"/>
+<img height="60" src="images\2.3.png" width="700"/>
 </center>
 
 ####2.4 _Adding the Second Hidden layer_
 - In this step, we add another hidden layer.
 
 <center>
-<img height="60" src="C:\Users\shivani.lad\Desktop\documentation\pics\2.4.png" width="600"/>
+<img height="60" src="images\2.4.png" width="600"/>
 </center>
 
 ####2.5 _Adding the output layer_
@@ -454,7 +454,7 @@ In this part, we model our Artificial Neural Network model.
 - The final parameter is metrics basically, it’s a list of metrics to be evaluated by the model and here we choose the accuracy metrics.
 
 <center>
-<img height="60" src="C:\Users\shivani.lad\Desktop\documentation\pics\2.6.png" width="800"/>
+<img height="60" src="images\2.6.png" width="800"/>
 </center>
 
 ####2.7 _Fitting the ANN_
@@ -463,28 +463,28 @@ In this part, we model our Artificial Neural Network model.
 - And the final parameter is **epoch** is basically **_when whole the training set passed through the ANN_**. Here, we choose the 100 number of the epoch.
 
 <center>
-<img height="60" src="C:\Users\shivani.lad\Desktop\documentation\pics\2.7.png" width="700"/>
+<img height="60" src="images\2.7.png" width="700"/>
 <br><br>
-<img height="500" src="C:\Users\shivani.lad\Desktop\documentation\pics\2.7_1.png" width="600"/>
+<img height="500" src="images\2.7_1.png" width="600"/>
 <br><br>
-<img height="500" src="C:\Users\shivani.lad\Desktop\documentation\pics\2.7_2.png" width="600"/>
+<img height="500" src="images\2.7_2.png" width="600"/>
 <br><br>
-<img height="500" src="C:\Users\shivani.lad\Desktop\documentation\pics\2.7_3.png" width="600"/>
+<img height="500" src="C:\images\2.7_3.png" width="600"/>
 <br><br>
-<img height="500" src="C:\Users\shivani.lad\Desktop\documentation\pics\2.7_4.png" width="600"/>
+<img height="500" src="images\2.7_4.png" width="600"/>
 <br><br>
-<img height="500" src="C:\Users\shivani.lad\Desktop\documentation\pics\2.7_5.png" width="600"/>
+<img height="500" src="images\2.7_5.png" width="600"/>
 <br><br>
-<img height="400" src="C:\Users\shivani.lad\Desktop\documentation\pics\2.7_6.png" width="600"/>
+<img height="400" src="images\2.7_6.png" width="600"/>
 </center>
-
+                                                                                                                                                             
 ###3. Making the Prediction and Accuracy Result
 ####3.1 _Predict the test set Result_
 - In this step, we predict our test set result.
 - Here, our prediction results in probability, so we choose 1(customer leave the bank) if the probability is greater than one then 0.5 otherwise 0(customer don’t leave the bank).
 
 <center>
-<img height="100" src="C:\Users\shivani.lad\Desktop\documentation\pics\3.1.png" width="400"/>
+<img height="100" src="is\3.1.png" width="400"/>
 </center>
 
 ####3.2 _Confusion metrics_
@@ -492,14 +492,14 @@ In this part, we model our Artificial Neural Network model.
 - To do that, we import **_confusion matrix_** from **_sklearn.metrics_**, then in confusion matrix, we pass two parameters first is **_y_test_** which is the actual test set result and second is **_y_pred_** which is the predicted result.
 
 <center>
-<img height="170" src="C:\Users\shivani.lad\Desktop\documentation\pics\3.2.png" width="450"/>
+<img height="170" src="images\3.2.png" width="450"/>
 </center>
 
 ####3.3 _Accuracy Score_
 - In this step, we calculate the **accuracy score** based on the **_actual test result_** and **_predict test results_**.
 
 <center>
-<img height="150" src="C:\Users\shivani.lad\Desktop\documentation\pics\3.3.png" width="420"/>
+<img height="150" src="images\3.3.png" width="420"/>
 
 ###So here we go we get _84.05%_ of our ANN model.
 </center>
@@ -742,7 +742,7 @@ They can perform tasks that are easy for a human but difficult for a machine:
 
   <center>
 
-  <img height="200" src="C:\Users\shivani.lad\Desktop\documentation\pics\handwritten-character-recognition-Anns-applications.png" width="300"/>
+  <img height="200" src="images\handwritten-character-recognition-Anns-applications.png" width="300"/>
   </center>
 
 - **Speech Recognition :**
@@ -753,7 +753,7 @@ They can perform tasks that are easy for a human but difficult for a machine:
 
   <center>
 
-  <img height="200" src="C:\Users\shivani.lad\Desktop\documentation\pics\ML-neural-networks-speech-recognition.png" width="300"/>
+  <img height="200" src="images\ML-neural-networks-speech-recognition.png" width="300"/>
   </center>
 
 - **Signature Classification :**
@@ -763,7 +763,7 @@ They can perform tasks that are easy for a human but difficult for a machine:
 
   <center>
 
-  <img height="200" src="C:\Users\shivani.lad\Desktop\documentation\pics\ann-application-signature-classification.png" width="300"/>
+  <img height="200" src="images\ann-application-signature-classification.png" width="300"/>
   </center>
 
 - **Facial Recognition :**
@@ -774,7 +774,7 @@ They can perform tasks that are easy for a human but difficult for a machine:
 
   <center>
 
-  <img height="300" src="C:\Users\shivani.lad\Desktop\documentation\pics\image-recognition-in-neural-networks.png" width="300"/>
+  <img height="300" src="images\image-recognition-in-neural-networks.png" width="300"/>
   </center>
 
 ##References
