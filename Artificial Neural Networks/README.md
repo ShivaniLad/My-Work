@@ -1,6 +1,6 @@
- # Artificial Neural Networks (ANN)
+# Artificial Neural Networks (ANN)
 
-<img height="450" src="C:\Users\shivani.lad\Desktop\documentation\pics\giffy.gif" width="700"/>
+<img height="450" src="images\giffy.gif" width="700"/>
 
 **Have you ever wondered how our brain works?** We all might have learned about it in our school days, Right! Our nervous system helps our brain to send all the messages to the desired parts of our body. **ANN** works exactly similar to how the neurons work in our nervous system.   
 
@@ -19,12 +19,12 @@
 
 
   <center>
-    <img height="350" src="C:\Users\shivani.lad\Desktop\documentation\pics\neuron.jpg" width="500"/>
+    <img height="350" src="images\neuron.jpg" width="500"/>
 
 **Biological Neural Network**
 
 <br><br>
-<img height="250" src="C:\Users\shivani.lad\Desktop\documentation\pics\artificial-neural-network3.png" width="550"/>
+<img height="250" src="images\artificial-neural-network3.png" width="550"/>
 
 **Artificial Neural Network**
 </center>
@@ -52,7 +52,7 @@
 - Artificial Neural Network primarily consists of three layers :
 
 <center>
-    <img height="300" src="C:\Users\shivani.lad\Desktop\documentation\pics\artificial-neural-network4.png" width="600"/>
+    <img height="300" src="images\artificial-neural-network4.png" width="600"/>
 
 **Artificial Neural Network Architecture**
 </center>
@@ -82,11 +82,11 @@
 - A transfer function is used for calculating the weighted sum of the inputs and the bias.
 
 <center>
-<img height="260" src="C:\Users\shivani.lad\Desktop\documentation\pics\how-ANN-works.png" width="550"/>
+<img height="260" src="images\how-ANN-works.png" width="550"/>
 
 </center>
 
-### _What is an activation function?_ and _Why do we use them?_
+### _What is an activation function?_* and _Why do we use them?_
 - After the transfer function has calculated the sum, the **_activation function_** obtains the result.
 - Based on the output received, the activation functions fire the appropriate result from the node.
 - **For Example**, if the output received is above 0.5, the activation function fires a 1 otherwise, it would remain 0.
@@ -99,14 +99,14 @@
   
 
   <center>
-  <img height="250" src="C:\Users\shivani.lad\Desktop\documentation\pics\How-artificial-Neural-Networks-work.png" width="600"/>
+  <img height="250" src="images\How-artificial-Neural-Networks-work.png" width="600"/>
   </center>
   
 #### Explanation
 - We know, the neural network has neurons that works in correspondence of weight, bias and their respective activation functions.
 - In neural network, we would update the weight and biases of the neurons on the basis of the error at the output.
 - This process is known as **_back propagation_**.
-- ####W hat is Back Propagation actually?
+- ####What is Back Propagation actually?
   - _**" Back Propagation is the process of updating and finding the optimal values of weights or coefficients which helps the model to minimize the error i.e difference between the actual and predicted values."**_
 - Activation makes the back propagation possible since the gradients are supplied along with the error to update the weight and biases.
 
@@ -116,7 +116,7 @@
 - In the image below, the curve is our cost function curve and our aim is to minimize the error such that Jmin i.e global minima is achieved.
 
 <center>
-<img height="300" src="C:\Users\shivani.lad\Desktop\documentation\pics\gradient.png" width="500"/>
+<img height="300" src="images\gradient.png" width="500"/>
 </center>
 
 #### Steps to achieve global minima
@@ -125,7 +125,7 @@
 3. Then new weights are calculated using the below formula, where **a** is the **learning rate** which is the parameter also known as step size to control the speed or steps of the backpropagation. It gives additional control on how fast we want to move on the curve to reach global minima.
 
 <center>
-<img height="300" src="C:\Users\shivani.lad\Desktop\documentation\pics\update_formula.png" width="500"/>
+<img height="300" src="images\update_formula.png" width="500"/>
 </center>
 
 4. This process of calculating the new weights, then errors from the new weights, and then updation of weights continues till we reach global minima and loss is minimized. 
@@ -136,7 +136,7 @@
 - Therefore, the **learning rate** is the **hyperparameter** that we have to choose based on the model.
 
 <center>
-<img height="300" src="C:\Users\shivani.lad\Desktop\documentation\pics\curve.png" width="500"/>
+<img height="300" src="images\curve.png" width="500"/>
 </center>
 
 #### Why do we need Non-linear activation functions ?
@@ -147,7 +147,7 @@
 
 - Suppose we have a neural network like;
 <center>
-<img height="300" src="C:\Users\shivani.lad\Desktop\documentation\pics\neuralNet.png" width="500"/>
+<img height="300" src="images\neuralNet.png" width="500"/>
 </center>
 
 #### Elements of the diagram :-
@@ -283,9 +283,9 @@ tanh(x) = 2 * sigmoid(2x) - 1
 - We use them in cases where the data is not sequential in nature.
 
 <center>
-<img height="300" src="C:\Users\shivani.lad\Desktop\documentation\pics\feed_forward_ann.jpg" width="550"/>
+<img height="300" src="images\feed_forward_ann.jpg" width="550"/>
 <br><br>
-<img height="300" src="C:\Users\shivani.lad\Desktop\documentation\pics\feedforward-artificial-neural-networks.png" width="500"/>
+<img height="300" src="images\feedforward-artificial-neural-networks.png" width="500"/>
 </center>
 
 #### 2. FeedBack Neural Network :
@@ -293,7 +293,7 @@ tanh(x) = 2 * sigmoid(2x) - 1
 - As per the University of Massachusetts, Lowell Centre for Atmospheric Research, the feedback networks feed information back into itself and are well suited to solve optimization issues. The Internal system error corrections utilize feedback ANNs.
 
 <center>
-<img height="400" src="C:\Users\shivani.lad\Desktop\documentation\pics\feedback_ann.jpg" width="300"/>
+<img height="400" src="images\feedback_ann.jpg" width="300"/>
 
 </center>
 
@@ -319,11 +319,10 @@ tanh(x) = 2 * sigmoid(2x) - 1
 ## Why do we need ANN?
 - **Utilizing the Tensorflow**, Neural Network Playground will provide a better understanding of the advantages of Neural Networks over ensemble techniques, logistic regression, or Support Vector Machine.
 
-
 <center>
-<img height="300" src="C:\Users\shivani.lad\Desktop\documentation\pics\1.png" width="300"/>
-<img height="300" src="C:\Users\shivani.lad\Desktop\documentation\pics\2.png" width="300"/>
-<img height="300" src="C:\Users\shivani.lad\Desktop\documentation\pics\3.png" width="300"/>
+<img height="300" src="images\1.png" width="300"/>
+<img height="300" src="images\2.png" width="300"/>
+<img height="300" src="images\3.png" width="300"/>
 
 #### Classification of data points to their respective colors using the flower dataset.
 </center>
@@ -336,7 +335,7 @@ tanh(x) = 2 * sigmoid(2x) - 1
 
 
 <center>
-<img height="900" src="C:\Users\shivani.lad\Desktop\documentation\pics\4.png" width="600"/>
+<img height="900" src="images\4.png" width="600"/>
 
 #### Illustrates the impact of multiple neurons on the final output. The higher the number of neurons, the better is the classification accuracy. 
 </center>
@@ -372,7 +371,7 @@ Model.compile(
   - Trains the model for a fixed number of epochs (iterations on a dataset).
   - 
   
-```pythonS
+```python
 Model.fit(
     x=None,
     y=None,
@@ -574,7 +573,7 @@ They can perform tasks that are easy for a human but difficult for a machine:
 
   <center>
 
-  <img height="200" src="C:\Users\shivani.lad\Desktop\documentation\pics\handwritten-character-recognition-Anns-applications.png" width="300"/>
+  <img height="200" src="images\handwritten-character-recognition-Anns-applications.png" width="300"/>
   </center>
 
 - **Speech Recognition :**
@@ -585,7 +584,7 @@ They can perform tasks that are easy for a human but difficult for a machine:
 
   <center>
 
-  <img height="200" src="C:\Users\shivani.lad\Desktop\documentation\pics\ML-neural-networks-speech-recognition.png" width="300"/>
+  <img height="200" src="images\ML-neural-networks-speech-recognition.png" width="300"/>
   </center>
 
 - **Signature Classification :**
@@ -595,7 +594,7 @@ They can perform tasks that are easy for a human but difficult for a machine:
 
   <center>
 
-  <img height="200" src="C:\Users\shivani.lad\Desktop\documentation\pics\ann-application-signature-classification.png" width="300"/>
+  <img height="200" src="images\ann-application-signature-classification.png" width="300"/>
   </center>
 
 - **Facial Recognition :**
@@ -606,7 +605,7 @@ They can perform tasks that are easy for a human but difficult for a machine:
 
   <center>
 
-  <img height="300" src="C:\Users\shivani.lad\Desktop\documentation\pics\image-recognition-in-neural-networks.png" width="300"/>
+  <img height="300" src="images\image-recognition-in-neural-networks.png" width="300"/>
   </center>
 
 ## References
