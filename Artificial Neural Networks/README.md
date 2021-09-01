@@ -1,17 +1,17 @@
-#Artificial Neural Networks (ANN)
+ # Artificial Neural Networks (ANN)
 
 <img height="450" src="C:\Users\shivani.lad\Desktop\documentation\pics\giffy.gif" width="700"/>
 
 **Have you ever wondered how our brain works?** We all might have learned about it in our school days, Right! Our nervous system helps our brain to send all the messages to the desired parts of our body. **ANN** works exactly similar to how the neurons work in our nervous system.   
 
-##Introduction to Artificial Neural Networks
+## Introduction to Artificial Neural Networks
 
 - **"Artificial Neural Networks"** are the most popular ***Machine Learning*** Algorithms today.
 - The invention of these Neural Networks took place in the **1970's**, coined by **Warren S McCulloch** and **Walter Pitts** but, they have achieved the huge popularity due to recent increase in computation power because of which they are now virtually everywhere.
 - In every application that we are use today, there is, ***Neural Networks*** power, the intelligent interface, that keeps us engaged. 
 - The term **"Artificial Neural Network"** refers to a biologically inspired sub-field of **Artificial Intelligence** modeled after the brain.
 
-##What is Artificial Neural Network (ANN)?
+## What is Artificial Neural Network (ANN)?
 - **ANN (Artificial Neural Network)** is at the core of the very core of **Deep Learning** an **advanced version** of **Machine Learning techniques**.
 - **ANN** are special type of machine learning algorithms that are modeled after the human brain.
 - Similarly, as the human brain has neurons interconnected with each other, artificial neural networks also have neurons that are linked to each other in various layers of the network. These neurons are known as **nodes**.
@@ -35,7 +35,7 @@
 - ANN's are non-linear statistical model which displays a complex relationships between the inputs and the outputs to discover a new pattern.
 - Variety of tasks such as, _**Image Recognition**, **Machine Translation**, **Medical Diagnosis**_, makes use of **Artificial Neural Networks**.
 
-###Relationship Between _Biological Neural Network_ and _Artificial Neural Networks_ :
+### Relationship Between _Biological Neural Network_ and _Artificial Neural Networks_ :
 
 | Biological Neural Network | Artificial Neural Network |
 | :----: | :----: |
@@ -45,7 +45,7 @@
 | Axon | Output |
 
 
-##Architecture of Artificial Neural Networks
+## Architecture of Artificial Neural Networks
 - To understand the concept of the architecture of an **Artificial Neural Networks**, we need to understand, **_What a neural network consists of ?_** 
 - In order to define a neural network that consists of a large number of artificial neurons, which are termed units arranged n a sequence of layers.
 - Let us look at the various types of layers available in neural networks.
@@ -57,15 +57,15 @@
 **Artificial Neural Network Architecture**
 </center>
 
-###1. Input Layer :
+### 1. Input Layer :
 - **Input Layer**, as the name suggests, it accepts input information in several formats like : _texts, numbers, audio files, image pixels, etc.,_ provided by the programmer.
 - Along with the input variables, it also represents the bias term. Hence, if there are n input variables, the size of the input layer is **n + 1**, where, **+ 1** is the bias term. 
  
-###2. Hidden Layer/ Layers :
+### 2. Hidden Layer/ Layers :
 - **Hidden Layer/s** is present between input and output layer.
 - It is a set of neurons that performs all the calculations to find hidden features and patterns.
 
-###3. Output Layer :
+### 3. Output Layer :
 - The **Output Layer** is the conclusions of the model derived from all the computations performed.
 - There can be single or multiple nodes in _output layer_.
 - Like, if we have the binary classification problem, the output node would be 1 but, in the case of multi-class classification, the output node would be more than one.
@@ -86,7 +86,7 @@
 
 </center>
 
-### **_What is an activation function?_** and **_Why do we use them?_**
+### _What is an activation function?_ and _Why do we use them?_
 - After the transfer function has calculated the sum, the **_activation function_** obtains the result.
 - Based on the output received, the activation functions fire the appropriate result from the node.
 - **For Example**, if the output received is above 0.5, the activation function fires a 1 otherwise, it would remain 0.
@@ -102,15 +102,15 @@
   <img height="250" src="C:\Users\shivani.lad\Desktop\documentation\pics\How-artificial-Neural-Networks-work.png" width="600"/>
   </center>
   
-####Explanation
+#### Explanation
 - We know, the neural network has neurons that works in correspondence of weight, bias and their respective activation functions.
 - In neural network, we would update the weight and biases of the neurons on the basis of the error at the output.
 - This process is known as **_back propagation_**.
-- ####What is Back Propagation actually?
+- ####W hat is Back Propagation actually?
   - _**" Back Propagation is the process of updating and finding the optimal values of weights or coefficients which helps the model to minimize the error i.e difference between the actual and predicted values."**_
 - Activation makes the back propagation possible since the gradients are supplied along with the error to update the weight and biases.
 
-####Back Propagation with Gradient Decent 
+#### Back Propagation with Gradient Decent 
 - **Gradient Descent** is one of the **optimizers** which helps in calculating the new weights. 
 - Let’s understand step by step how Gradient Descent optimizes the cost function.
 - In the image below, the curve is our cost function curve and our aim is to minimize the error such that Jmin i.e global minima is achieved.
@@ -119,7 +119,7 @@
 <img height="300" src="C:\Users\shivani.lad\Desktop\documentation\pics\gradient.png" width="500"/>
 </center>
 
-####Steps to achieve global minima
+#### Steps to achieve global minima
 1. First, the weights are initialized randomly i.e random value of the weight, and intercepts are assigned to the model while forward propagation and the errors are calculated after all the computation.
 2. Then the gradient is calculated i.e derivative of error with respect to current weights.
 3. Then new weights are calculated using the below formula, where **a** is the **learning rate** which is the parameter also known as step size to control the speed or steps of the backpropagation. It gives additional control on how fast we want to move on the curve to reach global minima.
@@ -139,18 +139,18 @@
 <img height="300" src="C:\Users\shivani.lad\Desktop\documentation\pics\curve.png" width="500"/>
 </center>
 
-####Why do we need Non-linear activation functions ?
+#### Why do we need Non-linear activation functions ?
 - A neural network without an activation function is essentially just a linear regression model.
 - The activation function does the non-linear transformation to the input, making it capable to learn and perform more complex tasks.
 
-####Mathematical Proof
+#### Mathematical Proof
 
 - Suppose we have a neural network like;
 <center>
 <img height="300" src="C:\Users\shivani.lad\Desktop\documentation\pics\neuralNet.png" width="500"/>
 </center>
 
-####Elements of the diagram :-
+#### Elements of the diagram :-
   - **Hidden Layer i.e. layer 1 :-**
 
 ```markdown
@@ -204,8 +204,8 @@ A non-linear activation function will let it learn as per the difference with re
 
 **Hence, we need an activation function.**
 
-###Variants of Activation Functions
-####1. Linear Function
+### Variants of Activation Functions
+#### 1. Linear Function
 - **Equation :** 
   - Linear function has the equation similar to as of a straight line i.e. y = ax + b.
   - No matter how many layers we have, if all are linear in nature, the final activation function of last layer is nothing but just a linear function of the input of first layer.
@@ -217,7 +217,7 @@ A non-linear activation function will let it learn as per the difference with re
   - Calculation of price of a house is a regression problem. 
   - House price may have any big/small value, so we can apply linear activation at output layer. 
   - Even in this case neural net must have any non-linear function at hidden layers.
-####2. Sigmoid Function
+#### 2. Sigmoid Function
 - It is a function which is plotted as ‘S’ shaped graph.
 - **Equation :**
   - A = 1/(1 + e-x)
@@ -227,7 +227,7 @@ A non-linear activation function will let it learn as per the difference with re
 - **Value Range :** 0 to 1
 - **Uses :**
   - Usually used in output layer of a binary classification, where result is either **0** or **1**, as value for sigmoid function lies between **0** and **1** only so, result can be predicted easily to be **1** if value is greater than **0.5** and **0** otherwise.
-####3. Tanh Function
+#### 3. Tanh Function
 - The activation that works almost always better than sigmoid function is Tanh function also knows as **Tangent Hyperbolic function**.
 - It’s actually mathematically shifted version of the sigmoid function. 
 - Both are similar and can be derived from each other.
@@ -242,7 +242,7 @@ tanh(x) = 2 * sigmoid(2x) - 1
 - **Uses :**
   - Usually used in hidden layers of a neural network as it’s values lies between -1 to 1 hence the mean for the hidden layer comes out be 0 or very close to it, hence helps in centering the data by bringing mean close to 0. 
   - This makes learning for the next layer much easier.
-####4. ReLU Function
+#### 4. ReLU Function
 - Stands for **Rectified Linear Unit**. 
 - It is the most widely used activation function. 
 - Chiefly implemented in **_hidden layers_** of Neural network.
@@ -257,7 +257,7 @@ tanh(x) = 2 * sigmoid(2x) - 1
   - At a time only a few neurons are activated making the network sparse making it efficient and easy for computation.
 
 - In simple words, _RELU **learns much faster** than sigmoid and Tanh function_.
-####5. Softmax Function
+#### 5. Softmax Function
 - The softmax function is also a type of sigmoid function but is handy when we are trying to handle classification problems.
 - **Nature :** Non-linear
 - **Uses :** 
@@ -266,16 +266,16 @@ tanh(x) = 2 * sigmoid(2x) - 1
 - **Output :**
   - The softmax function is ideally **_used in the output layer_** of the classifier where we are actually trying to attain the probabilities to define the class of each input.
 
-###Choosing the correct Activation Function 
+### Choosing the correct Activation Function 
 - The basic **_Thumb Rule_** is,  _" if you really **don’t know what activation function to use**, then **_simply use ReLU_** as it is a general activation function and is used in most cases these days "._ 
 - **_If_** your output is for **_binary classification_** then, **_sigmoid function_** is very natural choice **_for output layer_**.
 
-##Types of Artificial Neural Network
+## Types of Artificial Neural Network
 - There are two important types of artificial neural networks.
   1. FeedForward Neural Network
   2. FeedBack Neural Network
   
-####1.  FeedForward Neural Network :
+#### 1.  FeedForward Neural Network :
 - In the **feedforward** ANNs, the flow of information takes place only in **one direction**. 
 - That is, the flow of information is from the input layer to the hidden layer and finally to the output. 
 - There are no feedback loops present in this neural network. 
@@ -288,7 +288,7 @@ tanh(x) = 2 * sigmoid(2x) - 1
 <img height="300" src="C:\Users\shivani.lad\Desktop\documentation\pics\feedforward-artificial-neural-networks.png" width="500"/>
 </center>
 
-####2. FeedBack Neural Network :
+#### 2. FeedBack Neural Network :
 - In this type of ANN, the output returns into the network to accomplish the best-evolved results internally. 
 - As per the University of Massachusetts, Lowell Centre for Atmospheric Research, the feedback networks feed information back into itself and are well suited to solve optimization issues. The Internal system error corrections utilize feedback ANNs.
 
@@ -297,7 +297,7 @@ tanh(x) = 2 * sigmoid(2x) - 1
 
 </center>
 
-##Bayesian Networks
+## Bayesian Networks
 - These type of neural networks have a probabilistic graphical model that makes use of Bayesian Inference for computing the probability. 
 - These type of Bayesian Networks are also known as **Belief Networks** or **Bayes Networks** or **Bayes Nets**. 
 - In these Bayesian Networks, there are edges that connect the nodes representing the probabilistic dependencies present among these type of random variables. 
@@ -316,7 +316,7 @@ tanh(x) = 2 * sigmoid(2x) - 1
 - Bayesian Networks are mainly for learning the causal relationships and also understanding the domain knowledge to predict the future event. 
 - This takes place even in the case of missing data.
 
-##Why do we need ANN?
+## Why do we need ANN?
 - **Utilizing the Tensorflow**, Neural Network Playground will provide a better understanding of the advantages of Neural Networks over ensemble techniques, logistic regression, or Support Vector Machine.
 
 
@@ -325,7 +325,7 @@ tanh(x) = 2 * sigmoid(2x) - 1
 <img height="300" src="C:\Users\shivani.lad\Desktop\documentation\pics\2.png" width="300"/>
 <img height="300" src="C:\Users\shivani.lad\Desktop\documentation\pics\3.png" width="300"/>
 
-####Classification of data points to their respective colors using the flower dataset.
+#### Classification of data points to their respective colors using the flower dataset.
 </center>
 
 - In trying to classify different coordinates (say x and y) when displayed in a two-dimensional space represents the image of a flower into their respective colors. 
@@ -338,178 +338,10 @@ tanh(x) = 2 * sigmoid(2x) - 1
 <center>
 <img height="900" src="C:\Users\shivani.lad\Desktop\documentation\pics\4.png" width="600"/>
 
-####Illustrates the impact of multiple neurons on the final output. The higher the number of neurons, the better is the classification accuracy. 
+#### Illustrates the impact of multiple neurons on the final output. The higher the number of neurons, the better is the classification accuracy. 
 </center>
 
-##Practical Implementation with Artificial Neural Network
-- ###Churn Modelling Problem
-  - This a problem-solving data analytics challenge for a bank.
-  - Here, we have a dataset, with a large sample of the bank's customers.
-  - To make this dataset, the bank gathered information such as customer id, credit score, gender, age, tenure, balance, if the customer is active, has a credit card, etc. 
-  - During 6 months, the bank observed if these customers left or stayed in the bank.
-  <br><br>
-  - **Goal :** 
-    - To make an Artificial Neural Network that can predict, based on geo-demographical and transactional information given above, if any individual customer will leave the bank or stay (customer churn). 
-    - Besides that, we have to rank all the customers of the bank, based on their probability of leaving. 
-    - To do that, we need to use the right Deep Learning model, one that is based on a probabilistic approach.
-    <br><br>
-    
-  - **Dataset :**
-    - https://github.com/AmirAli5/Deep-Learning/blob/d1f9e69f2d144744434068a619b39a2d9afa039a/1.Supervised%20Deep%20Learning/1.Artificial%20Neural%20Network/Dataset/Churn_Modelling.csv
-
-###1. Data Preprocessing
-####1.1 _Import the libraries_
-- In this step, we import three Libraries in Data Preprocessing part. 
-- A library is a tool that you can use to make a specific job. 
-- First, we import the **numpy library** used for _multidimensional array_ then import the **pandas library** used to _import the dataset_ and in last we import **matplotlib library** used for _plotting the graph._
-
-<center>
-<img height="150" src="C:\Users\shivani.lad\Desktop\documentation\pics\1.1.png" width="300"/>
-</center>
-
-####1.2 _Import the Dataset_
-- In this step, we import the dataset to do that we use the pandas library. 
-- After importing our dataset we define our dependent and independent variable. 
-- Our independent variables are 1 to 12 attributes as you can see in the sample dataset which we call ‘X’ and dependent is our last attribute which we call ‘y’ here.
-
-<center>
-<img height="100" src="C:\Users\shivani.lad\Desktop\documentation\pics\1.2.png" width="450"/>
-</center>
-
-####1.3 _Encoding the Categorical Data_
-- In this step, we Encode our categorical data. 
-- If we see our dataset then Geography & Gender attribute is in Text and we Encode these two attributes in this part use the LabelEncoder and OneHOTEncoder from the Sklearn. Processing library.
-
-<center>
-<img height="200" src="C:\Users\shivani.lad\Desktop\documentation\pics\1.3.png" width="600"/>
-</center>
-
-####1.4 _Split the dataset for test and train_
-- In this step, we split our dataset into a test set and train set and an 80% dataset split for training and the remaining 20% for tests. 
-- Our dataset contains 10000 instances so **8000 data** we **train** and **2000 data** for the **test**.
-
-<center>
-<img height="100" src="C:\Users\shivani.lad\Desktop\documentation\pics\1.4.png" width="800"/>
-</center>
-
-####1.5 _Feature Scaling_
-- Feature Scaling is the most important part of data preprocessing. 
-- If we see our dataset then some attribute contains information in Numeric value some value very high and some are very low if we see the age and estimated salary. 
-- This will cause some issues in our machinery model to solve that problem we set all values on the same scale there are two methods to solve that problem first one is Normalize and Second is Standard Scaler.
-
-<center>
-<img height="250" src="C:\Users\shivani.lad\Desktop\documentation\pics\1.5.png" width="550"/>
-</center>
-
-- Here we use standard Scaler import from Sklearn Library.
-
-<center>
-<img height="150" src="C:\Users\shivani.lad\Desktop\documentation\pics\1.5_2.png" width="450"/>
-</center>
-
-###2. Building our Model
-In this part, we model our Artificial Neural Network model.
-
-####2.1 _Import the Libraries_
-- In this step, we import the Library which will build our ANN model. 
-- We import **Keras Library** which will build a deep neural network based on Tensorflow because we use Tensorflow backhand. 
-- Here we import the two modules from Keras. The first one is **Sequential** used for initializing our ANN model and the second is **Dense** used for adding different layers of ANN.
-
-<center>
-<img height="120" src="C:\Users\shivani.lad\Desktop\documentation\pics\2.1.png" width="550"/>
-</center>
-
-####2.2 _Initialize our ANN model_
-- In this step, we initialize our Artificial Neural Network model to do that we use sequential modules.
-
-<center>
-<img height="80" src="C:\Users\shivani.lad\Desktop\documentation\pics\2.2.png" width="400"/>
-</center>
-
-####2.3 _ Adding the input layer and first hidden layer_
-- In this step, we use the Dense model to add a different layer. 
-- The parameter which we pass here first is **output_dim=6** which defines _hidden layer=6_, the second parameter is **init= uniform** basically this is a uniform function that randomly initializes the weights which are close to 0 but not 0. 
-- The third parameter is **activation= relu** here in the _first hidden layer_ we use _relu activation_. 
-- And the last parameter which we pass in dense function is **input_dim= 11** which means the input node of our Neural Network is 11 because our dataset has 11 attributes that’s why we choose 11 input nodes.
-
-<center>
-<img height="60" src="C:\Users\shivani.lad\Desktop\documentation\pics\2.3.png" width="700"/>
-</center>
-
-####2.4 _Adding the Second Hidden layer_
-- In this step, we add another hidden layer.
-
-<center>
-<img height="60" src="C:\Users\shivani.lad\Desktop\documentation\pics\2.4.png" width="600"/>
-</center>
-
-####2.5 _Adding the output layer_
-- In this step, we add an output layer in our ANN structure **output_dim= 1** which means one output node.
-- Here, we use the **sigmoid function** because our target attribute has a binary class which is one or zero that’s why we use sigmoid activation function.
-
-####2.6 _Compiling the ANN_
-- In this step, we compile the ANN to do that we use the compile method and add several parameters the first parameter is **optimizer = Adam** here use the optimal number of weights. 
-- So for choosing the optimal number of weights, there are various algorithms of Stochastic Gradient Descent but **_very efficient_** one which is **_Adam_** so that’s why we use Adam optimizer here. 
-- The second parameter is **loss** this corresponds to loss function here we use **binary_cross-entropy** because if we see target attribute our dataset which contains the binary value that’s why we choose the binary cross-entropy. 
-- The final parameter is metrics basically, it’s a list of metrics to be evaluated by the model and here we choose the accuracy metrics.
-
-<center>
-<img height="60" src="C:\Users\shivani.lad\Desktop\documentation\pics\2.6.png" width="800"/>
-</center>
-
-####2.7 _Fitting the ANN_
-- In this step we fit the training data our model X_train, y_train is our training data. 
-- Here a **batch size** is basically **_a number of observations after which you want to update the weights_**. Here, we take batch size 10. 
-- And the final parameter is **epoch** is basically **_when whole the training set passed through the ANN_**. Here, we choose the 100 number of the epoch.
-
-<center>
-<img height="60" src="C:\Users\shivani.lad\Desktop\documentation\pics\2.7.png" width="700"/>
-<br><br>
-<img height="500" src="C:\Users\shivani.lad\Desktop\documentation\pics\2.7_1.png" width="600"/>
-<br><br>
-<img height="500" src="C:\Users\shivani.lad\Desktop\documentation\pics\2.7_2.png" width="600"/>
-<br><br>
-<img height="500" src="C:\Users\shivani.lad\Desktop\documentation\pics\2.7_3.png" width="600"/>
-<br><br>
-<img height="500" src="C:\Users\shivani.lad\Desktop\documentation\pics\2.7_4.png" width="600"/>
-<br><br>
-<img height="500" src="C:\Users\shivani.lad\Desktop\documentation\pics\2.7_5.png" width="600"/>
-<br><br>
-<img height="400" src="C:\Users\shivani.lad\Desktop\documentation\pics\2.7_6.png" width="600"/>
-</center>
-
-###3. Making the Prediction and Accuracy Result
-####3.1 _Predict the test set Result_
-- In this step, we predict our test set result.
-- Here, our prediction results in probability, so we choose 1(customer leave the bank) if the probability is greater than one then 0.5 otherwise 0(customer don’t leave the bank).
-
-<center>
-<img height="100" src="C:\Users\shivani.lad\Desktop\documentation\pics\3.1.png" width="400"/>
-</center>
-
-####3.2 _Confusion metrics_
-- In this step, we make a **confusion metric** of our test set result. 
-- To do that, we import **_confusion matrix_** from **_sklearn.metrics_**, then in confusion matrix, we pass two parameters first is **_y_test_** which is the actual test set result and second is **_y_pred_** which is the predicted result.
-
-<center>
-<img height="170" src="C:\Users\shivani.lad\Desktop\documentation\pics\3.2.png" width="450"/>
-</center>
-
-####3.3 _Accuracy Score_
-- In this step, we calculate the **accuracy score** based on the **_actual test result_** and **_predict test results_**.
-
-<center>
-<img height="150" src="C:\Users\shivani.lad\Desktop\documentation\pics\3.3.png" width="420"/>
-
-###So here we go we get _84.05%_ of our ANN model.
-</center>
-<br>
-
-- In, the above implementation, we have used the **dense layer** in the first and second hidden layers structure.
-- The model used is a sequential Model of **keras.models** which is used for the initialization of our ANN model.
-- Below is the brief introduction about different keras models and its frequently used layers and few methods.
-
-##Keras Models
+## Keras Models
 There are three ways to create keras models.
 - The **Sequential model**, which is very _**straightforward**_ (a simple list of layers), but is limited to single-input, single-output stacks of layers (as the name gives away).
 
@@ -519,8 +351,8 @@ There are three ways to create keras models.
 
 - **Model subclassing**, where _we implement everything from scratch on our own_. We normally use this if you have complex, out-of-the-box research use case.
 
-###Model Training APIs
-####compile method :
+### Model Training APIs
+#### compile method :
   - Configures the model for training.
   
 ```python
@@ -536,11 +368,11 @@ Model.compile(
 )
 ```
 
-####fit method :
+#### fit method :
   - Trains the model for a fixed number of epochs (iterations on a dataset).
   - 
   
-```python
+```pythonS
 Model.fit(
     x=None,
     y=None,
@@ -563,9 +395,9 @@ Model.fit(
     use_multiprocessing=False,
 )
 ```
-##Keras Layers
-###Core Layers of Keras
-####Input Function : 
+## Keras Layers
+### Core Layers of Keras
+#### Input Function : 
 ```python
 keras.Input(
     shape=None,
@@ -582,7 +414,7 @@ keras.Input(
   - Input() is used to instantiate a Keras tensor. 
   - A Keras tensor is a symbolic tensor-like object, which we augment with certain attributes that allow us to build a Keras model just by knowing the inputs and outputs of the model.
 
-####Dense Layer :
+#### Dense Layer :
 ```python
 keras.layers.Dense(units,
     activation=None,
@@ -601,7 +433,7 @@ keras.layers.Dense(units,
   - **Input shape** : N-D tensor with shape: (batch_size, ..., input_dim). The most common situation would be a 2D input with shape (batch_size, input_dim). 
   - **Output shape** : N-D tensor with shape: (batch_size, ..., units). For instance, for a 2D input with shape (batch_size, input_dim), the output would have shape (batch_size, units).
 
-####Activation Layer
+#### Activation Layer
 ```python
 keras.layers.Activation(activation, **kwargs)
 ```
@@ -610,7 +442,7 @@ keras.layers.Activation(activation, **kwargs)
   - **Input shape** : Arbitrary. Use the keyword argument input_shape (tuple of integers, does not include the batch axis) when using this layer as the first layer in a model.
   - **Output shape** : Same shape as input.
 
-####Embedding Layer
+#### Embedding Layer
 ```python
 keras.layers.Embedding(
     input_dim, output_dim,
@@ -632,7 +464,7 @@ keras.layers.Embedding(
   - **Input shape** : 2D tensor with shape: (batch_size, input_length). 
   - **Output shape** : 3D tensor with shape: (batch_size, input_length, output_dim).
   
-##Advantages of Artificial Neural Networks
+## Advantages of Artificial Neural Networks
 - ANN is **_versatile_**, **_adaptive_** and **_scalable_**, _making them appropriate to tackle large datasets and highly complex **Machine Learning** tasks_ such as, 
   - Image Classification (eg., Google Images)
   - Speech Recognition (eg., Apple's Siri)
@@ -662,7 +494,7 @@ keras.layers.Embedding(
 - **Having fault tolerance.**
   - Extortion of one or more cells of ANN does not prohibit it from generating output, and this feature makes the network fault-tolerance.
   
-##Disadvantages of Artificial Neural Network
+## Disadvantages of Artificial Neural Network
 - **Assurance of proper network structure.**
   - There is no particular guideline for determining the structure of artificial neural networks. 
   - The appropriate network structure is accomplished through experience, trial, and error.
@@ -689,7 +521,7 @@ keras.layers.Embedding(
 - **The duration of the network is unknown.**
   - The network is reduced to a specific value of the error, and this value does not give us optimum results.
   
-##Applications of Neural Networks
+## Applications of Neural Networks
 They can perform tasks that are easy for a human but difficult for a machine:
 - **Aerospace :**  Autopilot aircrafts, aircraft fault detection.
 
@@ -777,7 +609,7 @@ They can perform tasks that are easy for a human but difficult for a machine:
   <img height="300" src="C:\Users\shivani.lad\Desktop\documentation\pics\image-recognition-in-neural-networks.png" width="300"/>
   </center>
 
-##References
+## References
 - https://www.javatpoint.com/artificial-neural-network
 - https://data-flair.training/blogs/artificial-neural-networks-for-machine-learning/
 - https://towardsdatascience.com/introduction-to-artificial-neural-networks-for-beginners-2d92a2fb9984
