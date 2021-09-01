@@ -319,7 +319,6 @@ tanh(x) = 2 * sigmoid(2x) - 1
 ## Why do we need ANN?
 - **Utilizing the Tensorflow**, Neural Network Playground will provide a better understanding of the advantages of Neural Networks over ensemble techniques, logistic regression, or Support Vector Machine.
 
-
 <center>
 <img height="300" src="images\1.png" width="300"/>
 <img height="300" src="images\2.png" width="300"/>
