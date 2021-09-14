@@ -7,7 +7,7 @@
   2. **Ordinal** : Data which are in or has some order.
 
 <center>
-<img height="400" src="C:\Users\shivani.lad\Desktop\My-Work\Different Encoding Techniques for Categorical data\categorical data.png" width="600"/>
+<img height="400" src="categorical data.png" width="600"/>
 </center>
 
 - ### Examples for the **Nominal** variable:
