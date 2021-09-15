@@ -57,7 +57,7 @@ df['posted'] = df['posted'].replace({'Y' : 0, 'N' : 1})
 - In a situation, where order doesn’t matter, integer encoding could lead to poor model performance and should not be used.
 
 <center>
-<img height="300" src="one hot encoder.png" width="500"/>
+<img height="200" src="one hot encoder.png" width="500"/>
 
 #### One Hot Encoding
 </center>
