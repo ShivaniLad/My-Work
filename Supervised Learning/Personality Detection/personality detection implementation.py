@@ -7,6 +7,8 @@ import string
 from nltk import word_tokenize
 from spellchecker import SpellChecker
 from nltk.corpus import stopwords
+from nltk.stem import WordNetLemmatizer
+from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
 
 # loading the data
 data = pd.read_csv("personality data.csv")
@@ -95,17 +97,19 @@ def clean_data(text):
 data['string_posts'] = ['\\\\'.join(map(str, x)) for x in data['separated_posts']]
 # print(data['string_posts'].head(1))
 
-data['string_posts'] = data['string_posts'].apply(clean_data)
+data['clean_posts'] = data['string_posts'].apply(clean_data)
 # data['string_posts'] = data['string_posts'].apply(remove_punct)
 # print(data['string_posts'])
 
 # word tokenization
-data['string_posts'] = data['string_posts'].apply(lambda x: word_tokenize(x))
+print('Tokenizing the data.')
+data['tokenized_posts'] = data['clean_posts'].apply(lambda x: word_tokenize(x))
 # print(data['string_posts'])
 
 
 # checking the spellings in data using spellcheck
 # creating a spell_check function
+'''print('Spell Check \n')
 def spell_check(text):
     result = []
     spell = SpellChecker()
@@ -117,18 +121,67 @@ def spell_check(text):
 
 
 data['string_posts'] = data['string_posts'].apply(spell_check)
-# print(data['string_posts'])
+print(data['string_posts'])'''
 
 # removing stop words
-print(stopwords.words('english'))
+# print(stopwords.words('english'))
+
+stop_words = ['infj', 'entp', 'intp', 'intj', 'entj', 'enfj', 'infp', 'enfp', 'isfp', 'istp', 'isfj', 'istj', 'estp', 'esfp', 'estj', 'esfj', 'infjs', 'entps', 'intps', 'intjs', 'entjs', 'enfjs', 'infps', 'enfps', 'isfps', 'istps', 'isfjs', 'istjs', 'estps', 'esfps', 'estjs', 'esfjs']
 
 en_stopwords = stopwords.words('english')
+en_stopwords.extend(stop_words)
+# print(en_stopwords)
+
+print('Remove Stop Words')
 
 
 def remove_stopwords(text):
     result = []
+
     for token in text:
         if token not in en_stopwords:
             result.append(token)
 
     return result
+
+
+# applying remove_stopwords over dataset.
+data['tokenized_posts'] = data['tokenized_posts'].apply(remove_stopwords)
+# print(data['string_posts'])
+
+print('Normalizing the data')
+
+
+# Normalizing the data
+def lemmatize_token(tokens):
+    lemmatizer = WordNetLemmatizer()
+    tokens = [lemmatizer.lemmatize(token) for token in tokens]
+    return tokens
+
+
+# applying the lemmatize function over dataset
+data['normalized_posts'] = data['tokenized_posts'].apply(lemmatize_token)
+# print(data['string_posts'])
+
+# list to string
+data['cleaned_posts'] = data['normalized_posts'].apply(lambda x: ' '.join(x))
+# print(data['cleaned_posts'])
+
+# Vectorizing the data and removing some extra stop words
+print('Vectorizing data')
+
+val = data['cleaned_posts'].values.reshape(1, -1).tolist()[0]
+# print(val)
+
+vectorizer = CountVectorizer()
+# vectorizer.fit(val)
+x_cnt = vectorizer.fit_transform(val)
+# print(x_cnt)
+
+# Transform the count matrix to a tf-idf representation
+tfizer = TfidfTransformer()
+# tfizer.fit(x_cnt)
+X = tfizer.fit_transform(x_cnt).toarray()
+print(X.shape)
+
+
