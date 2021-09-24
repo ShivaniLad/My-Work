@@ -9,6 +9,11 @@ from spellchecker import SpellChecker
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression, SGDClassifier
+from sklearn.metrics import accuracy_score
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.neighbors import KNeighborsClassifier
 
 # loading the data
 data = pd.read_csv("personality data.csv")
@@ -68,8 +73,9 @@ sns.violinplot(x=data.type, y=data.num_post)
 plt.xlabel('Personality Types')
 plt.ylabel('Number of Posts')
 
-
 # plt.show()
+
+print('Cleaning the posts.')
 
 
 # cleaning the data
@@ -80,8 +86,11 @@ def clean_data(text):
     # removing the numbers
     result = re.sub(r'[0-9]+', '', result)
 
+    # removing underscore
+    # result = re.sub(r'_+', '', result)
+
     # removing punctuations
-    result = re.sub(r'[^\w\s]', '', result)
+    result = re.sub(r'[^\w\s]|_+', '', result)
 
     # removing extra whitespaces
     result = " ".join(result.split())
@@ -99,7 +108,7 @@ data['string_posts'] = ['\\\\'.join(map(str, x)) for x in data['separated_posts'
 
 data['clean_posts'] = data['string_posts'].apply(clean_data)
 # data['string_posts'] = data['string_posts'].apply(remove_punct)
-# print(data['string_posts'])
+# print(data['clean_posts'])
 
 # word tokenization
 print('Tokenizing the data.')
@@ -126,13 +135,15 @@ print(data['string_posts'])'''
 # removing stop words
 # print(stopwords.words('english'))
 
-stop_words = ['infj', 'entp', 'intp', 'intj', 'entj', 'enfj', 'infp', 'enfp', 'isfp', 'istp', 'isfj', 'istj', 'estp', 'esfp', 'estj', 'esfj', 'infjs', 'entps', 'intps', 'intjs', 'entjs', 'enfjs', 'infps', 'enfps', 'isfps', 'istps', 'isfjs', 'istjs', 'estps', 'esfps', 'estjs', 'esfjs']
+stop_words = ['infj', 'entp', 'intp', 'intj', 'entj', 'enfj', 'infp', 'enfp', 'isfp', 'istp', 'isfj', 'istj', 'estp',
+              'esfp', 'estj', 'esfj', 'infjs', 'entps', 'intps', 'intjs', 'entjs', 'enfjs', 'infps', 'enfps', 'isfps',
+              'istps', 'isfjs', 'istjs', 'estps', 'esfps', 'estjs', 'esfjs']
 
 en_stopwords = stopwords.words('english')
 en_stopwords.extend(stop_words)
 # print(en_stopwords)
 
-print('Remove Stop Words')
+print('Removing Stop Words.')
 
 
 def remove_stopwords(text):
@@ -146,10 +157,10 @@ def remove_stopwords(text):
 
 
 # applying remove_stopwords over dataset.
-data['tokenized_posts'] = data['tokenized_posts'].apply(remove_stopwords)
-# print(data['string_posts'])
+data['cleaned_posts'] = data['tokenized_posts'].apply(remove_stopwords)
+# print(data['cleaned_posts'])
 
-print('Normalizing the data')
+print('Normalizing the data.')
 
 
 # Normalizing the data
@@ -165,23 +176,119 @@ data['normalized_posts'] = data['tokenized_posts'].apply(lemmatize_token)
 
 # list to string
 data['cleaned_posts'] = data['normalized_posts'].apply(lambda x: ' '.join(x))
-# print(data['cleaned_posts'])
+# print(len(data['cleaned_posts'][0]))
 
-# Vectorizing the data and removing some extra stop words
-print('Vectorizing data')
+# featuring types of personalities
+'''
+We have 4 pair of of personalities and accordingly we have made their different columns.
 
-val = data['cleaned_posts'].values.reshape(1, -1).tolist()[0]
-# print(val)
+Favorite world ( Extrovert (E) / Introvert (I) ) (First Letter)
+Information ( Sensing (S) / Intuition (N) ) (Second Letter)
+Decision ( Thinking (T) , Feeling (F) ) (Third Letter)
+Structure ( Judging (J) , Perceiving (P) ) (Fourth Letter)
+'''
+
+# print(data['type'].head(10))
+
+data['fav_world'] = data['type'].apply(lambda x: 1 if x[0] == 'E' else 0)
+data['info'] = data['type'].apply(lambda x: 1 if x[1] == 'S' else 0)
+data['decision'] = data['type'].apply(lambda x: 1 if x[2] == 'T' else 0)
+data['structure'] = data['type'].apply(lambda x: 1 if x[3] == 'J' else 0)
+
+# print(data.columns)
+
+# building machine learning algorithm
+print('Building Algorithm. ')
+
+print('Splitting the data.')
+
+x = data['cleaned_posts'].values
+# print(x)
+
+y = data['type']
+
+# splitting the data into training and testing set
+xtrain, xtest, ytrain, ytest = train_test_split(x, y, test_size=0.2, random_state=10)
+
+# print(xtrain, "\n", xtest, '\n', ytrain, '\n', ytest)
+
+# vectorizing the xdata using countvectorizer
+print('Vectorizing the data.')
 
 vectorizer = CountVectorizer()
-# vectorizer.fit(val)
-x_cnt = vectorizer.fit_transform(val)
-# print(x_cnt)
+Xtrain_cnt = vectorizer.fit_transform(xtrain)
+Xtest_cnt = vectorizer.transform(xtest)
+# print(x_cnt.shape)
 
-# Transform the count matrix to a tf-idf representation
-tfizer = TfidfTransformer()
-# tfizer.fit(x_cnt)
-X = tfizer.fit_transform(x_cnt).toarray()
-print(X.shape)
+# transforming the vectorized to tf-idf form
+tfidf = TfidfTransformer()
+Xtrain = tfidf.fit_transform(Xtrain_cnt)
+Xtest = tfidf.transform(Xtest_cnt)
+# print(Xtrain)
 
 
+# Implementation with LogisticRegression Algorithm.
+print('Implementation with LogisticRegression Algorithm.')
+
+lr = LogisticRegression(max_iter=500)
+
+# fitting training data into the model
+lr.fit(Xtrain, ytrain)
+
+# predicting the test data
+ypred = lr.predict(Xtest)
+yprob = lr.predict_proba(Xtest)
+
+# accuracy of the model
+print('Training set Accuracy : ', round(lr.score(Xtrain, ytrain) * 100, 2), "%")
+print('Testing set Accuracy : ', round(accuracy_score(ytest, ypred) * 100, 2), '%')
+
+
+# Implementation with SGDClassifier Algorithm
+# SGDClassifier is stochastic gradient descent (SGD). This implementation works with data represented as dense or sparse arrays of floating point values for the features.
+print('Implementation with SGDClassifier Algorithm.')
+
+sgd = SGDClassifier(max_iter=5, tol=None)
+
+# fitting training data into the model
+sgd.fit(Xtrain, ytrain)
+
+# predicting the test data
+ypred = sgd.predict(Xtest)
+
+# accuracy of the model
+acc_sgd = round(sgd.score(Xtrain, ytrain) * 100, 2)
+print('Training set Accuracy : ', acc_sgd, "%")
+print("Testing set Accuracy : ", round(accuracy_score(ytest, ypred) * 100, 2), '%')
+
+
+# Implementation with RandomForestClassifier Algorithm.
+print('Implementation with RandomForestClassifier Algorithm.')
+
+rfc = RandomForestClassifier(criterion='entropy', n_estimators=100)
+
+# fitting training data into the model
+rfc.fit(Xtrain, ytrain)
+
+# predicting the test data
+ypred = rfc.predict(Xtest)
+
+# accuracy of the model
+print('Training set Accuracy : ', round(rfc.score(Xtrain, ytrain) * 100, 2), "%")
+print("Testing set Accuracy : ", round(accuracy_score(ytest, ypred) * 100, 2), '%')
+
+
+# Implementation with KNeighbourClassifier
+print('Implementation with KNeighbourClassifier')
+
+knn = KNeighborsClassifier(n_neighbors=10)
+
+# fitting training data into the model
+knn.fit(Xtrain, ytrain)
+
+# predicting the test data
+ypred = knn.predict(Xtest)
+
+# accuracy of the model
+print('Training set Accuracy : ', round(knn.score(Xtrain, ytrain) * 100, 2), "%")
+print("Testing set Accuracy : ", round(accuracy_score(ytest, ypred) * 100, 2), '%')
