@@ -17,20 +17,20 @@ from sklearn.neighbors import KNeighborsClassifier
 
 # loading the data
 data = pd.read_csv("personality data.csv")
-# print("Data: \n", data)
-# print(data.shape)
+print("Data: \n", data)
+print(data.shape)
 
 # Exploring the data
 
 # getting data info
-# data.info()
+data.info()
 
 # describing the data
-# print("\n Data Description: \n", data.describe())
+print("\n Data Description: \n", data.describe())
 
 # counting the total particular types in the data
 type_count = data['type'].value_counts()
-# print("\n Type Count: \n", type_count)
+print("\n Type Count: \n", type_count)
 
 # plotting the personalities over their value counts
 plt.figure(figsize=(8, 6), facecolor='skyblue')
@@ -43,16 +43,16 @@ plt.yticks(list(range(16)), type_count.index)
 plt.ylabel('Personality Types')
 plt.xlabel('Value Count')
 
-# plt.show()
+plt.show()
 
 # separating the posts from ||| delimiter and counting total posts per id
 data['separated_posts'] = data['posts'].apply(lambda x: x.strip().split('|||'))
 data['num_post'] = data['separated_posts'].apply(lambda x: len(x))
 
-# print("\n Data: \n", data.head())
+print("\n Data: \n", data.head())
 
 # unique values from num_post
-# print(data['num_post'].unique())
+print(data['num_post'].unique())
 
 # taking the first data of separated_post and converting to list
 # string = list(data['separated_posts'][1])
@@ -61,7 +61,7 @@ data['num_post'] = data['separated_posts'].apply(lambda x: len(x))
 
 # grouping the num_post as per the types
 num_post_data = data.groupby('type')['num_post'].apply(list).reset_index()
-# print(num_post_data)
+print(num_post_data)
 
 # plotting the number of posts per personality
 plt.title('Number of Posts per Personality')
@@ -73,7 +73,7 @@ sns.violinplot(x=data.type, y=data.num_post)
 plt.xlabel('Personality Types')
 plt.ylabel('Number of Posts')
 
-# plt.show()
+plt.show()
 
 print('Cleaning the posts.')
 
@@ -85,9 +85,6 @@ def clean_data(text):
 
     # removing the numbers
     result = re.sub(r'[0-9]+', '', result)
-
-    # removing underscore
-    # result = re.sub(r'_+', '', result)
 
     # removing punctuations
     result = re.sub(r'[^\w\s]|_+', '', result)
@@ -104,16 +101,16 @@ def clean_data(text):
 
 # list to string -> separated_posts
 data['string_posts'] = ['\\\\'.join(map(str, x)) for x in data['separated_posts']]
-# print(data['string_posts'].head(1))
+print(data['string_posts'].head(1))
 
 data['clean_posts'] = data['string_posts'].apply(clean_data)
 # data['string_posts'] = data['string_posts'].apply(remove_punct)
-# print(data['clean_posts'])
+print(data['clean_posts'])
 
 # word tokenization
 print('Tokenizing the data.')
 data['tokenized_posts'] = data['clean_posts'].apply(lambda x: word_tokenize(x))
-# print(data['string_posts'])
+print(data['string_posts'])
 
 
 # checking the spellings in data using spellcheck
@@ -158,7 +155,7 @@ def remove_stopwords(text):
 
 # applying remove_stopwords over dataset.
 data['cleaned_posts'] = data['tokenized_posts'].apply(remove_stopwords)
-# print(data['cleaned_posts'])
+print(data['cleaned_posts'])
 
 print('Normalizing the data.')
 
@@ -172,11 +169,11 @@ def lemmatize_token(tokens):
 
 # applying the lemmatize function over dataset
 data['normalized_posts'] = data['tokenized_posts'].apply(lemmatize_token)
-# print(data['string_posts'])
+print(data['string_posts'])
 
 # list to string
 data['cleaned_posts'] = data['normalized_posts'].apply(lambda x: ' '.join(x))
-# print(len(data['cleaned_posts'][0]))
+print(len(data['cleaned_posts'][0]))
 
 # featuring types of personalities
 '''
