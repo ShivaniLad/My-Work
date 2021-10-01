@@ -40,7 +40,8 @@ print("\n Type Count: \n", type_count)
 
 
 def close_event():
-    # timer calls this function after 3 seconds and closes the window
+    # timer calls thi
+    # s function after 3 seconds and closes the window
     plt.close()
 
 
